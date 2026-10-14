@@ -12,6 +12,8 @@ from app.service import import_batch,projection
 
 @pytest.fixture
 def env(monkeypatch):
+ from app import security
+ monkeypatch.setattr(security,'AUTH_MODE','demo')
  engine=create_engine('sqlite://',connect_args={'check_same_thread':False},poolclass=StaticPool);Base.metadata.create_all(engine)
  factory=sessionmaker(engine,expire_on_commit=False);monkeypatch.setattr(main,'Session',factory)
  return TestClient(main.app),factory

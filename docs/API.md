@@ -33,3 +33,21 @@ Accepted duplicate links form a canonical projection; original rows are never de
 Strict field contract is in `services/api/app/schema.py` and the generated OpenAPI schema. Unknown values are null/unknown, not zero or fabricated strings. Field evidence identifies observed tokens; derived merchant categories carry `curated-demo-map-v1` provenance. User correction history is separate from observed evidence and never promoted into shared mappings automatically.
 
 Job processing is synchronous and bounded. The row is committed before processing, and progress is committed per message. A killed worker can leave `processing`; there is no durable raw-content recovery worker. Re-import is the recovery path. This is an integration boundary for a future background worker, not a claim that such a worker exists.
+
+## Account and Gmail foundation
+
+Private financial routes now require an authenticated session. Workspace IDs are selected server-side from the account; caller owner headers/body fields cannot override them. Mutations require `X-CSRF-Token` from `GET /auth/me`. Registration/login require the configured Origin and JSON. Private responses are no-store.
+
+| Method | Path | Purpose |
+|---|---|---|
+| GET | /auth/me | Session status and current account/CSRF token |
+| POST | /auth/register | Explicit development-only account creation |
+| POST | /auth/login | Sign in and rotate opaque cookie |
+| POST | /auth/logout | Revoke current session |
+| GET | /connectors/gmail/status | Current account connection/setup status |
+| POST | /connectors/gmail/connect | Generate bound state/PKCE consent URL |
+| GET | /connectors/gmail/callback | Consume Google code/state once |
+| POST | /connectors/gmail/import | Date-bounded consented local-rule extraction; optional encrypted cursor |
+| DELETE | /connectors/gmail/connection | Disconnect locally and attempt provider revocation |
+
+See GMAIL-SETUP.md and PRODUCTION-READINESS.md for configuration and limits.

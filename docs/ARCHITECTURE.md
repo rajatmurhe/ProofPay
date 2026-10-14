@@ -16,3 +16,9 @@ Sources for dependency baseline: https://nextjs.org/docs/app/getting-started/ins
 ## Diagram
 
 See [`architecture.mmd`](architecture.mmd) for the implementation architecture in Mermaid source. It distinguishes input adapters, in-memory privacy filtering, extraction modes, persistence, reversible relationships and development-only evaluation.
+
+## Account/Gmail foundation branch
+
+Authenticated sessions now resolve the account's unique server-assigned workspace before financial endpoints run. Password hashes, hashed session IDs, bounded login counters and account/session-bound OAuth state use new SQL tables in migration 0002. Legacy financial owner rows are preserved until explicit operator adoption.
+
+Gmail consent uses fixed Google endpoints, PKCE and single-use state. A server-only Fernet key encrypts stored token bundles/verifiers and date/account-bound pagination cursors. User-triggered imports fetch bounded plain-text messages in memory, use the existing privacy/rules pipeline, and write into the authenticated financial workspace. Public deployment and successful live-provider verification remain outstanding. See PRODUCTION-READINESS.md.

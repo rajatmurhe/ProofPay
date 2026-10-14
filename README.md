@@ -1,6 +1,6 @@
 # ProofPay
 
-An evidence-backed, local financial activity prototype for imported SMS and email. Next.js + FastAPI, with PostgreSQL migrations and a SQLite quick start. No public deployment, personal account connection or live inbox access.
+An evidence-backed, local financial activity prototype for imported SMS and email. Next.js + FastAPI, with PostgreSQL migrations and a SQLite quick start. Authentication and Gmail connection foundations are available on the production-foundation branch. No public deployment or successful live inbox verification is claimed.
 
 ## Start locally
 
@@ -22,9 +22,9 @@ In another terminal, from the repository root:
 ./scripts/start-web.sh
 ```
 
-Open **http://127.0.0.1:3017**. API: **http://127.0.0.1:8017**; interactive API docs at `/docs`. Ports are chosen to avoid another app already using port 8000 on the development machine. The API script applies migrations before starting. Never bind these unauthenticated services publicly.
+Open **http://127.0.0.1:3017**. API: **http://127.0.0.1:8017**; interactive API docs at `/docs`. Ports are chosen to avoid another app already using port 8000 on the development machine. The API script applies migrations before starting. Keep development services local. Production mode requires authenticated access, HTTPS, PostgreSQL, explicit allowed hosts and self-registration disabled. See [production readiness](docs/PRODUCTION-READINESS.md).
 
-Go to **Connect & import → Load synthetic demo**. Or run `./scripts/seed.sh`. The demo contains 40 synthetic messages and uses labelled fixture mode. Import formats and samples: `data/synthetic/demo.json`, `sample.csv`, `purchase.eml`.
+Create a local account and sign in, then go to **Connect & import → Load synthetic demo**. Or run `./scripts/seed.sh`. The demo contains 40 synthetic messages and uses labelled fixture mode. Import formats and samples: `data/synthetic/demo.json`, `sample.csv`, `purchase.eml`.
 
 ### PostgreSQL
 
@@ -68,11 +68,14 @@ npm run typecheck --prefix apps/web
 npm run build --prefix apps/web
 ```
 
-With both services running:
+With separate isolated QA services running:
 
 ```sh
-npm run test:e2e --prefix apps/web
+E2E_BASE_URL=http://127.0.0.1:3018 npm run test:e2e --prefix apps/web
+E2E_BASE_URL=http://127.0.0.1:3019 npm run test:e2e --prefix apps/web -- accounts.spec.ts
 ```
+
+The first suite requires a demo-mode QA API; the account journey requires an authenticated QA API with development registration enabled. Neither command should target personal-data workspaces.
 
 Browser tests use installed Google Chrome and delete/reseed the configured owner's data. This verification used a separate SQLite database and app at port 3018, selected with `E2E_BASE_URL=http://127.0.0.1:3018`. For separate QA services, set API `LOCAL_WEB_ORIGIN=http://127.0.0.1:3018`, a separate `DATABASE_URL` and `LOCAL_OWNER`; build the web app with `API_URL=http://127.0.0.1:8018 NEXT_DIST_DIR=.next-qa`, and serve it on port 3018. Do not run them against personal data. Adjust `apps/web/playwright.config.ts` to use a separately installed Playwright Chromium if Chrome is unavailable. Tests check `/health` for the expected single-user app before deletion.
 
@@ -97,4 +100,12 @@ Current synthetic regression sample (50 inputs): **35/35** financial messages fo
 - [Five-minute demo script](docs/DEMO.md)
 - [Implementation plan and decisions](docs/IMPLEMENTATION.md)
 
-This is a useful prototype with deliberately visible limitations, not a complete financial ledger. Authentication, approved connectors, consented real-data evaluation, broader multilingual parsing, full-field correction and production hardening remain next-release work.
+This is a useful prototype with deliberately visible limitations, not a complete financial ledger. Verified identity onboarding/recovery, live Gmail verification, consented real-data evaluation, broader multilingual parsing, full-field correction and deployment hardening remain next-release work.
+
+## Accounts and Gmail
+
+The default API mode now requires sign-in. `ENABLE_REGISTRATION=true` permits local development account creation; production mode refuses that setting. An administrator can provision/reset/disable accounts with `./scripts/manage-users.sh`. Passwords are entered through a hidden prompt, never command-line arguments.
+
+Existing single-user demo records remain preserved but are not automatically exposed to newly registered accounts. An operator can explicitly assign that workspace to an otherwise empty account with `./scripts/manage-users.sh adopt-demo --email you@example.com`; this preserves record IDs and import fingerprints and revokes old sessions.
+
+Gmail uses a separate read-only Google OAuth consent flow, per-account encrypted token storage and user-triggered bounded imports. It needs your Google Cloud OAuth configuration before activation. See [Gmail setup](docs/GMAIL-SETUP.md). The connector currently imports plain-text email parts, including nested MIME; HTML-only mail and attachments are skipped with aggregate counts. Gmail imports always use local rules.

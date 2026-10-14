@@ -18,3 +18,5 @@ playwright-report/
 .env.*
 !.env.example
 apps/web/next-env.d.ts
+
+.next-authqa/

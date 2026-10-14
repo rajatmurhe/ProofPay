@@ -1,0 +1,94 @@
+flowchart LR
+  subgraph inputs["Message inputs"]
+    sms["SMS file<br/>JSON or CSV"]
+    eml["Email file<br/>plain text EML"]
+    paste["Pasted message"]
+    demo["Synthetic demo<br/>fixture-labelled"]
+  end
+
+  subgraph web["Local web application"]
+    ui["Next.js and React UI<br/>Import · Overview · Activity<br/>Bills and refunds · Review"]
+    proxy["Same-origin API rewrite<br/>/api/*"]
+  end
+
+  subgraph api["FastAPI service · loopback only"]
+    endpoints["Import and record API"]
+    adapters["Input adapters<br/>size and schema limits<br/>quoted email cleanup"]
+    memory["In-memory processing"]
+    gate{"OTP and<br/>financial relevance gate"}
+    discard["Discard content<br/>OTP · irrelevant · uncertain<br/>aggregate counts only"]
+    mode{"Processing mode"}
+    rules["Deterministic rules<br/>Pydantic event schema"]
+    fixture["Rules on synthetic data<br/>mode labelled fixture"]
+    provider["Optional HTTPS AI adapter<br/>masked relevant text only"]
+    validate["Validate schema and source evidence<br/>provider result stays needs review"]
+    fallback["Rule result or safe fallback<br/>provider failure count"]
+    normalize["Normalize explicit facts<br/>preserve unknown fields"]
+    dedupe["Idempotency and reconciliation<br/>references first · conservative matches"]
+    projection["Canonical event projection<br/>refund progress · net purchase<br/>metrics and review state"]
+  end
+
+  subgraph storage["Persistence · SQLAlchemy and Alembic"]
+    db[("PostgreSQL via Docker<br/>or local SQLite")]
+    jobs["Jobs<br/>status and anonymous counts"]
+    messages["Messages<br/>source hash and masked field evidence<br/>no raw body"]
+    events["Events<br/>typed financial facts"]
+    links["Message-event links<br/>one or many"]
+    relations["Relationships<br/>duplicate or refund<br/>suggested · accepted · reversible"]
+    audit["Corrections and relationship audit"]
+  end
+
+  subgraph verification["Development and evaluation"]
+    tests["Pytest and Playwright"]
+    dataset["Synthetic labelled dataset<br/>development and regression splits"]
+    reports["Evaluation reports<br/>metrics and failure examples"]
+  end
+
+  sms --> ui
+  eml --> ui
+  paste --> ui
+  demo --> ui
+  ui --> proxy --> endpoints
+  endpoints --> adapters --> memory --> gate
+  gate -->|"OTP / irrelevant / uncertain"| discard
+  discard --> jobs
+  gate -->|"relevant"| mode
+  mode -->|"rules"| rules
+  mode -->|"demo"| fixture
+  fixture --> rules
+  rules --> normalize
+  rules -->|"unresolved and live mode"| provider
+  provider --> validate
+  validate -->|"valid and source-grounded"| normalize
+  validate -->|"invalid, timeout, or error"| fallback
+  fallback --> normalize
+  normalize --> dedupe
+  dedupe -->|"retained structured facts"| db
+  db --- jobs
+  db --- messages
+  db --- events
+  db --- links
+  db --- relations
+  db --- audit
+  db --> projection
+  projection -->|"events, metrics, jobs, exports"| endpoints
+  endpoints --> proxy --> ui
+  ui -->|"correct field · review link · delete data"| endpoints
+
+  tests -.-> ui
+  tests -.-> endpoints
+  dataset -.-> rules
+  dataset -.-> reports
+  rules -.-> reports
+
+  classDef source fill:#edf3e8,stroke:#78936a,color:#263b2d
+  classDef process fill:#f5f6f2,stroke:#aab5a2,color:#27352c
+  classDef sensitive fill:#fbf3e4,stroke:#c6a05a,color:#594526
+  classDef store fill:#eaf0f4,stroke:#7894a5,color:#263742
+  classDef dev fill:#f1ebf5,stroke:#9a83a8,color:#43344b
+
+  class sms,eml,paste,demo source
+  class ui,proxy,endpoints,adapters,memory,mode,rules,fixture,normalize,dedupe,projection process
+  class gate,discard,provider,validate,fallback sensitive
+  class db,jobs,messages,events,links,relations,audit store
+  class tests,dataset,reports dev

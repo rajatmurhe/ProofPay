@@ -1,0 +1,28 @@
+{
+  "name": "proofpay-web",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev --webpack --hostname 127.0.0.1 --port 3017",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1 --port 3017",
+    "test:e2e": "playwright test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^16",
+    "react": "^19",
+    "react-dom": "^19",
+    "recharts": "^3",
+    "lucide-react": "^0.577.0"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "@tailwindcss/postcss": "^4",
+    "@playwright/test": "^1.58.0"
+  }
+}

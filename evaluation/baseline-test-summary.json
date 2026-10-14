@@ -1,0 +1,31 @@
+{
+  "description": "Summary captured from the pre-fix evaluation on 2026-10-14. Original test sample was then used to diagnose the fixes; subsequent runs are regression results.",
+  "count": 50,
+  "relevance": {
+    "tp": 33,
+    "fp": 0,
+    "fn": 2,
+    "precision": 1.0,
+    "recall": 0.9429
+  },
+  "classification_macro_f1": 0.7641,
+  "amount_exact_match": {
+    "correct": 32,
+    "total": 35,
+    "accuracy": 0.9143
+  },
+  "date_exact_match": {
+    "correct": 8,
+    "total": 8
+  },
+  "auto_validated_critical_accuracy": {
+    "correct": 27,
+    "total": 27,
+    "coverage_of_relevant_truth": 0.7714
+  },
+  "known_failures": [
+    "heldout-36-0: sentence-ending periods after card-statement amounts",
+    "heldout-42-0: declined UPI payment relevance",
+    "heldout-51-0: explicit debit hua phrasing"
+  ]
+}

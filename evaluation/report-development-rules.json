@@ -1,0 +1,127 @@
+{
+  "dataset": "synthetic only; no consented real data",
+  "split": "development",
+  "evaluation_status": "Regression benchmark after inspecting and fixing known sample failures; not an unseen-data estimate.",
+  "mode": "rules",
+  "count": 27,
+  "families": 12,
+  "relevance": {
+    "tp": 19,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0
+  },
+  "classification": {
+    "macro_f1": 1.0,
+    "per_class": {
+      "Transaction": {
+        "support": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "Payment": {
+        "support": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "Refund": {
+        "support": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "OTP": {
+        "support": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "Credit Card Bill": {
+        "support": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "Offer/Promotion": {
+        "support": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "Cashback/Reward": {
+        "support": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "EMI": {
+        "support": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "Failed Transaction": {
+        "support": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "Other": {
+        "support": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  },
+  "explicit_amount_currency_role_exact_match": {
+    "correct": 19,
+    "total": 19,
+    "accuracy": 1.0
+  },
+  "explicit_event_date_exact_match": {
+    "correct": 10,
+    "total": 10,
+    "accuracy": 1.0
+  },
+  "auto_validated_critical_accuracy": {
+    "correct": 18,
+    "total": 18,
+    "accuracy": 1.0,
+    "coverage_of_relevant_truth": 0.9474
+  },
+  "duplicates": {
+    "predicted": 0,
+    "expected": 0,
+    "correct": 0,
+    "precision": null,
+    "recall": null
+  },
+  "relationships": {
+    "predicted": 0,
+    "expected": 0,
+    "correct": 0,
+    "precision": null,
+    "recall": null
+  },
+  "latency_ms": {
+    "mean": 0.24,
+    "max": 4.026
+  },
+  "provider": {
+    "calls": 0,
+    "tokens": null,
+    "cost": null,
+    "live_verified": false
+  },
+  "failure_examples": [],
+  "limitations": [
+    "Small synthetic benchmark; not statistically representative.",
+    "Critical accuracy checks labelled type, amount roles, currency, status and dates where labelled; not every possible extracted field.",
+    "No learned classifier, so no training split. Families and linked groups do not cross development/test.",
+    "Fixture mode runs deterministic rules against explicit synthetic fixtures; it does not simulate a live provider."
+  ]
+}

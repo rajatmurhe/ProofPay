@@ -1,5 +1,7 @@
 # ProofPay test results and fixes
 
+The Phase 3 results below are the historical baseline. Current production-foundation validation is recorded in the final section.
+
 Verified on 14 October 2026. The local app passes the automated checks below. Browser testing used a separate synthetic database; the existing app's 34 records were preserved across its API restart.
 
 ## What was checked
@@ -80,3 +82,11 @@ Non-blocking tool warnings: installed Starlette TestClient's httpx integration i
 ## ProofPay rename verification
 
 The app branding, browser title, API title, package name, CSV filename, documentation and development database names use ProofPay. All 31 backend tests, five browser journeys, TypeScript and production build passed again after the rename. PostgreSQL was tested with the renamed `proofpay` user/database in a separate disposable local instance. The existing SQLite database was renamed with the API stopped, and all 34 record identities were verified unchanged. Screenshots were refreshed using synthetic test data.
+
+## Production-foundation validation
+
+Verified on 14 October 2026: **48 backend tests passed**, **five demo browser journeys passed**, and **one authenticated account browser journey passed**. TypeScript and production frontend builds passed. Migrations 0002/0003 and the account/session/CSRF/tenant smoke passed on isolated PostgreSQL 17. The local API now rejects unauthenticated financial reads, and all 34 legacy record identities remain unchanged.
+
+New checks cover account-to-account read/export/correction/link/delete isolation; Argon2 hashes and opaque session persistence; origin/CSRF checks; session rotation, idle expiry, logout, disabled users and login throttling; production startup guards; encrypted Gmail tokens, account/session-bound state and PKCE, callback replay/expiry/wrong scope, token refresh, bounded provider responses, import privacy/idempotency, date/account-bound cursors, concurrent disconnect before retention and disconnect during pending/in-flight consent. Browser checks cover registration/sign-in, private demo data, logout, another account's empty workspace, foreign-record rejection, renewed sign-in, 401 expiry handling and desktop/mobile layouts.
+
+Google responses were mocked in tests. No real mailbox, successful live OAuth exchange, real-message quality or public deployment was verified. Screenshots `sign-in-desktop.png`, `sign-in-mobile.png` and `gmail-setup-desktop.png` contain only synthetic test accounts. See GMAIL-SETUP.md and PRODUCTION-READINESS.md for setup and outstanding requirements.

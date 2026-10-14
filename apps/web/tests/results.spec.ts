@@ -43,9 +43,9 @@ test('quality results, repaired parsing, import feedback, error recovery and del
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),view+' overflow').toBe(true);
  }
  await page.screenshot({path:'../../docs/import-results-mobile.png',fullPage:true});
- await page.getByRole('button',{name:'Delete all local financial data'}).click();
+ await page.getByRole('button',{name:'Delete my financial data'}).click();
  await page.getByRole('button',{name:'Confirm deletion'}).click();
- await expect(page.getByRole('status')).toContainText('All local financial data deleted');
+ await expect(page.getByRole('status')).toContainText('Your financial data was deleted');
  expect(await (await request.get('/api/events')).json()).toEqual([]);
  expect(await (await request.get('/api/jobs')).json()).toEqual([]);
  expect(errors).toEqual([]);

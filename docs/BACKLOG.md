@@ -1,11 +1,11 @@
 # Limits and next release
 
 ## Current limitations
-- Single local user, no real authentication. No public deployment or production security/compliance claim.
+- Initial account authentication/isolation and Gmail OAuth/import code are implemented on production-foundation. Public deployment, verified onboarding/recovery/MFA, managed operations and a successful live Gmail run remain outstanding. See PRODUCTION-READINESS.md.
 - Template coverage remains narrow. Sentence-ending amount punctuation, declined payments and the explicit Hinglish phrase `debit hua` are fixed. Broader multilingual parsing remains unsupported. The original sample now serves as a regression benchmark; pre-fix results are preserved in `evaluation/baseline-test-summary.json`.
 - 77 labelled evaluation cases, not 500–1,000; 40 additional demo messages. The small sample cannot establish a 99% population-level guarantee. No consented real data or live-provider evaluation.
 - Strict live API adapter implemented and failure-tested, but no credentials/provider run. Candidate semantics need stronger field-by-field entailment; live suggestions remain needs review, and completed-purchase/received-refund summaries exclude them.
-- No Android/iOS inbox access, Gmail OAuth, bank connections, payment initiation, PDFs/images, chatbot, savings comparison or verified benefits catalogue.
+- No Android/iOS inbox access, verified live Gmail connection, bank connections, payment initiation, PDFs/images, chatbot, savings comparison or verified benefits catalogue.
 - Explicit event dates support ISO YYYY-MM-DD only. Other date formats remain missing. No automatic timezone inference.
 - Multiple events require explicit `||` or `EVENT:`/bullet separators. Arbitrary paragraph-level multi-event extraction is not solved.
 - One occurrence can retain extra evidence when re-imported with changed source IDs. Exact input replay is idempotent; weak similarities are suggestions, not automatic merges.

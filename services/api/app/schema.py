@@ -1,6 +1,6 @@
 from typing import Literal
 from datetime import datetime, date
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 MessageType = Literal['Transaction','Payment','Refund','OTP','Credit Card Bill','Offer/Promotion','Cashback/Reward','EMI','Failed Transaction','Other']
 class Strict(BaseModel):
@@ -69,3 +69,22 @@ class LinkInput(Strict):
     kind: Literal['duplicate','refund']
 class LinkAction(Strict):
     status: Literal['accepted','rejected','undone']
+
+class Credentials(Strict):
+    email: str = Field(min_length=3,max_length=254,pattern=r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
+    password: str = Field(min_length=12,max_length=128)
+    @field_validator('email')
+    @classmethod
+    def normalise_email(cls,value):return value.lower()
+class GmailImport(Strict):
+    after: date
+    before: date
+    limit: int = Field(default=20,ge=1,le=50)
+    consent: Literal[True]
+    cursor: str | None = Field(default=None,max_length=4096)
+    @field_validator('before')
+    @classmethod
+    def date_window(cls,value,info):
+        start=info.data.get('after')
+        if start and not 0 < (value-start).days <= 31:raise ValueError('Choose a window of 1 to 31 days')
+        return value

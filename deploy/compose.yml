@@ -1,0 +1,65 @@
+name: proofpay
+x-api-env: &api-env
+  DATABASE_URL: postgresql+psycopg://proofpay:${POSTGRES_PASSWORD:-local-development-only}@db:5432/proofpay
+  ENVIRONMENT: development
+  AUTH_MODE: authenticated
+  ENABLE_REGISTRATION: "true"
+  LOCAL_WEB_ORIGIN: http://127.0.0.1:3017
+  ALLOWED_HOSTS: api,localhost,127.0.0.1
+  PROCESSING_MODE: rules
+  GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+  GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+  CONNECTOR_ENCRYPTION_KEY: ${CONNECTOR_ENCRYPTION_KEY:-}
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: proofpay
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-development-only}
+      POSTGRES_DB: proofpay
+    volumes: [database:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U proofpay -d proofpay"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  migrate:
+    build:
+      context: ..
+      dockerfile: deploy/api.Dockerfile
+    environment: *api-env
+    command: [python, -m, alembic, -c, services/api/alembic.ini, upgrade, head]
+    depends_on:
+      db: {condition: service_healthy}
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/api.Dockerfile
+    environment: *api-env
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8017/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+  worker:
+    build:
+      context: ..
+      dockerfile: deploy/api.Dockerfile
+    environment: *api-env
+    command: [python, scripts/gmail-worker.py]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/web.Dockerfile
+    ports: ["127.0.0.1:3017:3017"]
+    depends_on:
+      api: {condition: service_healthy}
+    restart: unless-stopped
+volumes:
+  database:

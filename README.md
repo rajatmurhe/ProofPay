@@ -109,3 +109,15 @@ The default API mode now requires sign-in. `ENABLE_REGISTRATION=true` permits lo
 Existing single-user demo records remain preserved but are not automatically exposed to newly registered accounts. An operator can explicitly assign that workspace to an otherwise empty account with `./scripts/manage-users.sh adopt-demo --email you@example.com`; this preserves record IDs and import fingerprints and revokes old sessions.
 
 Gmail uses a separate read-only Google OAuth consent flow, per-account encrypted token storage and user-triggered bounded imports. It needs your Google Cloud OAuth configuration before activation. See [Gmail setup](docs/GMAIL-SETUP.md). The connector currently imports plain-text email parts, including nested MIME; HTML-only mail and attachments are skipped with aggregate counts. Gmail imports always use local rules.
+
+## AI evaluation and durable imports
+
+The portfolio upgrade adds a reproducible local TF-IDF/logistic-regression experiment, rules/LLM/hybrid evaluation tooling, a durable Gmail import worker, container setup and CI. No paid AI provider is needed for the local experiments. The classifier remains experimental and does not update financial records; live LLM evaluation remains unrun until configured.
+
+- [Results, reproduction commands and interview walkthrough](docs/AI-AND-AUTOMATION.md)
+- [Full local stack and deployment handoff](deploy/README.md)
+- [Passed checks and remaining verification](docs/UPGRADE-VALIDATION.md)
+- [Classifier report](ml/reports/classifier-report.json)
+- [Extraction comparison report](evaluation/reports/extraction-comparison.json)
+
+After applying migrations, start `./scripts/gmail-worker.sh` alongside the API and web app for background Gmail imports. The UI reports queued/running/completed work and the last successful import. Google OAuth setup is still required for real mail.

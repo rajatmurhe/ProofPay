@@ -1,0 +1,30 @@
+import {test,expect} from '@playwright/test';
+
+test('Gmail import shows queued progress, restores after navigation, and reports completion',async({page})=>{
+ test.setTimeout(90000);
+ const health=await(await page.request.get('/api/health')).json();test.skip(!health.auth_required,'Uses authenticated QA server');
+ const email=`queue-ui-${Date.now()}@example.invalid`;
+ await page.goto('/');await page.getByRole('button',{name:'Create a local account'}).click();
+ await page.getByLabel('Email address').fill(email);await page.getByLabel('Password',{exact:true}).fill('Synthetic queue test 729!');await page.getByRole('button',{name:'Create account',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Your money, in focus.'})).toBeVisible();
+ let queued=false,complete=false;let payload:Record<string,unknown>|null=null;
+ const job=()=>({id:'synthetic-task',status:complete?'complete':'queued',attempts:complete?1:0,error:null,result:complete?{after:'2026-10-01',before:'2026-10-15',fetched:3,counts:{retained:1,reimported:1},unsupported_content_skipped:1,next_cursor:null,more_available:false}:null});
+ await page.route('**/api/connectors/gmail/status',r=>r.fulfill({json:{configured:true,connected:true,email:'synthetic@example.invalid',last_success_at:complete?'2026-10-18T09:00:00Z':null}}));
+ await page.route('**/api/connectors/gmail/imports',r=>{payload=r.request().postDataJSON();queued=true;return r.fulfill({status:202,json:job()})});
+ await page.route('**/api/connectors/gmail/imports/latest',r=>r.fulfill({json:queued?job():null}));
+ await page.route('**/api/connectors/gmail/imports/synthetic-task',r=>r.fulfill({json:job()}));
+ await page.getByRole('button',{name:'Connect & import',exact:true}).click();
+ await page.getByLabel('Gmail import from').fill('2026-10-01');await page.getByLabel('Gmail import before').fill('2026-10-15');
+ const start=page.getByRole('button',{name:'Import financial emails',exact:true});await expect(start).toBeDisabled();
+ await page.getByLabel('I agree to read matching emails').check();await start.click();
+ await expect(page.getByRole('region',{name:'Gmail connection'})).toContainText('Your import is queued');
+ expect(payload).toMatchObject({after:'2026-10-01',before:'2026-10-15',consent:true,limit:20});
+ await page.getByRole('button',{name:'Overview',exact:true}).click();await page.getByRole('button',{name:'Connect & import',exact:true}).click();
+ await expect(page.getByRole('region',{name:'Gmail connection'})).toContainText('Your import is queued');
+ complete=true;
+ await expect(page.getByRole('region',{name:'Gmail connection'})).toContainText('Emails checked: 3. Financial messages saved: 1.',{timeout:15000});
+ await expect(page.getByRole('region',{name:'Gmail connection'})).toContainText('Last successful import');
+ await expect(page.getByLabel('Gmail import from')).toHaveValue('2026-10-01');
+ await expect(page.getByLabel('I agree to read matching emails')).not.toBeChecked();
+ await page.screenshot({path:'../../docs/gmail-queue-demo.png',fullPage:true});
+});

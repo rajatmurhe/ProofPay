@@ -1,0 +1,423 @@
+{
+  "corpus_sha256": "6b448cf9a9cdd5aaaf4eaade75f055ef62b17a77a9de730eaf8f0a56833da6ce",
+  "seed": 42,
+  "sklearn_version": "1.9.1",
+  "model": "word TF-IDF (1,2) + balanced logistic regression, C=1",
+  "data": "synthetic template-family split; not real-world accuracy",
+  "split_counts": {
+    "train": 120,
+    "validation": 40,
+    "test": 40
+  },
+  "family_counts": {
+    "train": 30,
+    "validation": 10,
+    "test": 10
+  },
+  "validation_threshold_search": [
+    {
+      "threshold": 0,
+      "coverage": 1.0,
+      "accuracy": 0.8
+    },
+    {
+      "threshold": 0.2,
+      "coverage": 0.3,
+      "accuracy": 1.0
+    },
+    {
+      "threshold": 0.3,
+      "coverage": 0.1,
+      "accuracy": 1.0
+    },
+    {
+      "threshold": 0.4,
+      "coverage": 0.0,
+      "accuracy": null
+    },
+    {
+      "threshold": 0.5,
+      "coverage": 0.0,
+      "accuracy": null
+    },
+    {
+      "threshold": 0.6,
+      "coverage": 0.0,
+      "accuracy": null
+    },
+    {
+      "threshold": 0.7,
+      "coverage": 0.0,
+      "accuracy": null
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.0,
+      "accuracy": null
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.0,
+      "accuracy": null
+    },
+    {
+      "threshold": 1.0,
+      "coverage": 0.0,
+      "accuracy": null
+    }
+  ],
+  "selected_threshold": 0.2,
+  "test": {
+    "macro_f1": 0.7333333333333333,
+    "per_class": {
+      "Cashback/Reward": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1-score": 0.6666666666666666,
+        "support": 4.0
+      },
+      "Credit Card Bill": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "EMI": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "Failed Transaction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "OTP": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "Offer/Promotion": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "Other": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "Payment": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "Refund": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1-score": 0.6666666666666666,
+        "support": 4.0
+      },
+      "Transaction": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "accuracy": 0.8,
+      "macro avg": {
+        "precision": 0.7,
+        "recall": 0.8,
+        "f1-score": 0.7333333333333333,
+        "support": 40.0
+      },
+      "weighted avg": {
+        "precision": 0.7,
+        "recall": 0.8,
+        "f1-score": 0.7333333333333333,
+        "support": 40.0
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Cashback/Reward",
+        "Credit Card Bill",
+        "EMI",
+        "Failed Transaction",
+        "OTP",
+        "Offer/Promotion",
+        "Other",
+        "Payment",
+        "Refund",
+        "Transaction"
+      ],
+      "rows_truth_columns_prediction": [
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "review_rate": 0.7,
+    "accepted_accuracy": 1.0,
+    "inference_ms_per_message": 0.04727397463284433,
+    "errors": [
+      {
+        "id": "Transaction:4:0",
+        "expected": "Transaction",
+        "predicted": "Cashback/Reward",
+        "score": 0.17152963549995412
+      },
+      {
+        "id": "Transaction:4:1",
+        "expected": "Transaction",
+        "predicted": "Cashback/Reward",
+        "score": 0.17152963549995412
+      },
+      {
+        "id": "Transaction:4:2",
+        "expected": "Transaction",
+        "predicted": "Cashback/Reward",
+        "score": 0.17152963549995412
+      },
+      {
+        "id": "Transaction:4:3",
+        "expected": "Transaction",
+        "predicted": "Cashback/Reward",
+        "score": 0.17152963549995412
+      },
+      {
+        "id": "Offer/Promotion:4:0",
+        "expected": "Offer/Promotion",
+        "predicted": "Refund",
+        "score": 0.14749503005545406
+      },
+      {
+        "id": "Offer/Promotion:4:1",
+        "expected": "Offer/Promotion",
+        "predicted": "Refund",
+        "score": 0.14749503005545406
+      },
+      {
+        "id": "Offer/Promotion:4:2",
+        "expected": "Offer/Promotion",
+        "predicted": "Refund",
+        "score": 0.14749503005545406
+      },
+      {
+        "id": "Offer/Promotion:4:3",
+        "expected": "Offer/Promotion",
+        "predicted": "Refund",
+        "score": 0.14749503005545406
+      }
+    ]
+  },
+  "limitations": [
+    "Agent-authored synthetic templates share vocabulary and cannot establish real-mail performance.",
+    "Validation and test each have only one template per class.",
+    "After report inspection, this corpus is a development benchmark; reserve independently collected data for a future final evaluation.",
+    "Review threshold targets 90% validation accuracy, not a production accuracy guarantee.",
+    "Model is experimental and does not bypass the OTP/privacy gate or update financial facts."
+  ],
+  "rules_baseline_on_same_test": {
+    "macro_f1": 0.12,
+    "per_class": {
+      "Cashback/Reward": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "Credit Card Bill": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "EMI": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "Failed Transaction": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "OTP": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "Offer/Promotion": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "Other": {
+        "precision": 0.1111111111111111,
+        "recall": 1.0,
+        "f1-score": 0.2,
+        "support": 4.0
+      },
+      "Payment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "Refund": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "Transaction": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "accuracy": 0.2,
+      "macro avg": {
+        "precision": 0.11111111111111112,
+        "recall": 0.2,
+        "f1-score": 0.12,
+        "support": 40.0
+      },
+      "weighted avg": {
+        "precision": 0.11111111111111112,
+        "recall": 0.2,
+        "f1-score": 0.12,
+        "support": 40.0
+      }
+    },
+    "mapping": "OTP gate maps to OTP; messages without extracted events map to Other."
+  }
+}

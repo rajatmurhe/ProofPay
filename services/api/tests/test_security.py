@@ -2,6 +2,7 @@ import base64
 import json
 import os
 import subprocess
+import sys
 import time
 from urllib.parse import urlparse, parse_qs
 import httpx
@@ -199,7 +200,7 @@ def test_connector_unconfigured_html_attachment_and_bounded_http(env,monkeypatch
 @pytest.mark.parametrize('values',[{'AUTH_MODE':'demo'},{'ENABLE_REGISTRATION':'true'},{'LOCAL_WEB_ORIGIN':'http://127.0.0.1:3017'},{'DATABASE_URL':'sqlite://'},{'ALLOWED_HOSTS':'*'}])
 def test_production_rejects_insecure_configuration(values):
  settings={**os.environ,'ENVIRONMENT':'production','AUTH_MODE':'authenticated','ENABLE_REGISTRATION':'false','LOCAL_WEB_ORIGIN':'https://proofpay.example.invalid','DATABASE_URL':'postgresql+psycopg://demo:demo@127.0.0.1:5999/demo','ALLOWED_HOSTS':'proofpay.example.invalid',**values,'PYTHONPATH':'services/api'}
- result=subprocess.run([os.path.abspath('.venv/bin/python'),'-c','from app import security'],env=settings,capture_output=True)
+ result=subprocess.run([sys.executable,'-c','from app import security'],env=settings,capture_output=True)
  assert result.returncode!=0
 
 def test_gmail_pagination_is_account_generation_and_date_bound(env,monkeypatch):

@@ -3,11 +3,11 @@ from pathlib import Path
 from fastapi import FastAPI, UploadFile, File, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, Response
-from sqlalchemy import select, delete
+from sqlalchemy import select, delete, update
 from sqlalchemy.exc import IntegrityError
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 from . import security
-from .db import User, AuthSession
+from .db import User, AuthSession, GmailImportTask, GmailConnection, uid
 from .schema import Credentials
 from .schema import Batch, Correction, LinkInput, LinkAction, EventData
 from .db import Session, Event, Message, Job, MessageEvent, Relationship, Audit
@@ -142,6 +142,9 @@ def export(request:Request,format:str='json'):
 @app.delete('/data')
 def erase(request:Request):
     with Session() as s:
+        if request.state.user:
+            s.execute(delete(GmailImportTask).where(GmailImportTask.user_id==request.state.user.id))
+            s.execute(update(GmailConnection).where(GmailConnection.owner==request.state.user.id).values(generation=uid(),last_success_at=None))
         ids=[e.id for e in rows(s,Event,request.state.owner)]
         s.execute(delete(MessageEvent).where(MessageEvent.event_id.in_(ids)))
         for model in [Audit,Relationship,Event,Message,Job]:s.execute(delete(model).where(model.owner==request.state.owner))
@@ -200,3 +203,6 @@ def logout(request:Request,response:Response):
 
 from .gmail import router as gmail_router
 app.include_router(gmail_router)
+
+from .gmail_jobs import router as gmail_jobs_router
+app.include_router(gmail_jobs_router)

@@ -1,5 +1,6 @@
 let csrfToken='';
 export function setCsrfToken(value:string){csrfToken=value}
+export class RequestError extends Error{constructor(message:string,public status:number){super(message)}}
 export class SessionExpired extends Error{}
 export async function api(path:string,options?:RequestInit){
  const headers=new Headers(options?.headers);
@@ -10,7 +11,7 @@ export async function api(path:string,options?:RequestInit){
   let message=response.status>=500?'The request was interrupted. Please try again.':'The request could not be completed.';
   try{const detail=(await response.json()).detail;if(typeof detail==='string')message=detail}catch{}
   if(response.status===401&&path!=='/auth/login'){window.dispatchEvent(new Event('proofpay-session-expired'));throw new SessionExpired('Please sign in again.')}
-  throw Error(message);
+  throw new RequestError(message,response.status);
  }
  return response.json();
 }

@@ -13,7 +13,7 @@ from cryptography.fernet import Fernet, InvalidToken
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import RedirectResponse
 from sqlalchemy import select, delete, update
-from .db import Session, OAuthState, GmailConnection, User, AuthSession, uid
+from .db import Session, OAuthState, GmailConnection, User, AuthSession, uid, now as db_now
 from .schema import GmailImport, InputMessage
 from .service import import_batch
 from . import security
@@ -83,7 +83,7 @@ def status(request: Request):
         configured = False
     with Session() as s:
         connection = s.get(GmailConnection, request.state.user.id)
-        return {'configured': configured, 'connected': bool(connection), 'email': connection.email if connection else None, 'scope': 'Read email only', 'live_verified': bool(connection)}
+        return {'configured': configured, 'connected': bool(connection), 'email': connection.email if connection else None, 'scope': 'Read email only', 'live_verified': bool(connection), 'last_success_at': connection.last_success_at if connection else None}
 
 
 @router.post('/connect')
@@ -168,6 +168,10 @@ def plain_body(payload, depth=0):
 
 @router.post('/import')
 def import_mail(payload: GmailImport, request: Request):
+    return execute_import(payload, request)
+
+
+def execute_import(payload, request, expected_generation=None):
     require_account(request)
     client_id, client_secret, cipher = config()
     now = int(time.time())
@@ -177,6 +181,8 @@ def import_mail(payload: GmailImport, request: Request):
         if not connection:
             raise HTTPException(409, 'Connect Gmail before importing messages.')
         generation = connection.generation
+        if expected_generation is not None and generation != expected_generation:
+            raise HTTPException(409, 'Gmail connection changed. Start a new import.')
         acquired = s.execute(update(GmailConnection).where(GmailConnection.owner == request.state.user.id, GmailConnection.generation == generation, GmailConnection.locked_until <= now).values(locked_until=now + 900)).rowcount
         s.commit()
         if acquired != 1:
@@ -225,7 +231,7 @@ def import_mail(payload: GmailImport, request: Request):
             s.expire_all()
             account=s.get(User,request.state.user.id)
             session=s.get(AuthSession,request.state.session.token_hash)
-            if not account or not account.active or not session or session.expires_at<=int(time.time()):raise HTTPException(401,'Please sign in again before importing email.')
+            if not account or not account.active or not session or session.expires_at<=int(time.time()) or session.last_seen_at+security.IDLE_SECONDS<=int(time.time()):raise HTTPException(401,'Please sign in again before importing email.')
             current = s.get(GmailConnection, request.state.user.id)
             if not current or current.generation != generation:
                 raise HTTPException(409, 'Gmail was disconnected. The import was stopped.')
@@ -235,8 +241,12 @@ def import_mail(payload: GmailImport, request: Request):
                 if not isinstance(next_token,str) or len(next_token)>2000:raise ValueError('Invalid page token')
                 page={'purpose':'gmail-pagination','owner':request.state.user.id,'generation':generation,'query':security.digest(query),'token':next_token,'expires_at':int(time.time())+900}
                 next_cursor=cipher.encrypt(json.dumps(page).encode()).decode()
-            job = import_batch(s, messages, request.state.owner, 'rules')
-            return {**job, 'fetched': len(ids), 'unsupported_content_skipped': skipped, 'more_available': bool(next_cursor), 'next_cursor': next_cursor, 'processing': 'local rules'}
+            # Serialize retention with disconnect/data deletion until the batch commits.
+            held=s.execute(update(GmailConnection).where(GmailConnection.owner==request.state.user.id,GmailConnection.generation==generation).values(last_success_at=db_now())).rowcount
+            if held!=1:raise HTTPException(409,'Gmail connection changed. The import was stopped.')
+            job = import_batch(s, messages, request.state.owner, 'rules', commit=False)
+            s.execute(update(GmailConnection).where(GmailConnection.owner == request.state.user.id, GmailConnection.generation == generation).values(last_success_at=db_now()));s.commit()
+            return {**job, 'fetched': len(ids), 'unsupported_content_skipped': skipped, 'more_available': bool(next_cursor), 'next_cursor': next_cursor, 'processing': 'local rules', 'after': str(payload.after), 'before': str(payload.before)}
         except HTTPException:
             raise
         except Exception:

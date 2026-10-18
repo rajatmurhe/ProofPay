@@ -56,8 +56,9 @@ def quarantine_ambiguous_refund_links(s,owner):
         if len({root(r.left_id) for r in links})>1:
             for r in links:r.status='suggested';r.reason='Order reference matches multiple distinct purchases; choose the original purchase'
 
-def import_batch(s,messages,owner,mode='rules'):
-    job=Job(owner=owner,status='processing',counts={});s.add(job);s.commit()
+def import_batch(s,messages,owner,mode='rules',commit=True):
+    persist=s.commit if commit else s.flush
+    job=Job(owner=owner,status='processing',counts={});s.add(job);persist()
     counts={k:0 for k in ['processed','retained','irrelevant','otp','unresolved','reimported','failed','provider_failures']}
     try:
         for message in messages:
@@ -84,10 +85,11 @@ def import_batch(s,messages,owner,mode='rules'):
             except Exception:
                 # Do not log exception representations: provider/validation errors may contain input.
                 counts['failed']+=1
-            job.counts=dict(counts);s.commit()
-        job.status='partial' if counts['failed'] or counts['provider_failures'] else 'completed';job.counts=counts;s.commit()
+            job.counts=dict(counts);persist()
+        job.status='partial' if counts['failed'] or counts['provider_failures'] else 'completed';job.counts=counts;persist()
     except Exception:
-        s.rollback();job=s.get(Job,job.id);job.status='failed';job.counts=counts;s.commit()
+        if not commit:raise
+        s.rollback();job=s.get(Job,job.id);job.status='failed';job.counts=counts;persist()
     return {'id':job.id,'status':job.status,'counts':counts}
 
 def projection(s,owner):

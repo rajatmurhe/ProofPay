@@ -1,0 +1,930 @@
+{
+  "dataset_sha256": "5f51b7da98206b4f38bfbcc874c7337de8e2539357ce870ae6fa2de879f8ee37",
+  "evaluation_status": "Existing synthetic regression corpus; not unseen-data accuracy",
+  "model": null,
+  "limitations": [
+    "All strategies share a local OTP safety gate.",
+    "Hybrid calls the model only for rule-retained messages requiring review; relevance false negatives remain visible.",
+    "LLM outputs always require review. Grounding checks lexical support, not semantic truth.",
+    "Unsupported outputs count as provider errors; hybrid fallback is explicit.",
+    "Reported cost uses supplied rates and provider usage. Missing usage produces null, never a fabricated estimate."
+  ],
+  "strategies": [
+    {
+      "status": "complete",
+      "mode": "rules",
+      "count": 50,
+      "classification": {
+        "macro_f1": 1.0,
+        "per_class_f1": {
+          "Cashback/Reward": 1.0,
+          "Credit Card Bill": 1.0,
+          "EMI": 1.0,
+          "Failed Transaction": 1.0,
+          "Irrelevant": 1.0,
+          "OTP": 1.0,
+          "Offer/Promotion": 1.0,
+          "Other": 1.0,
+          "Payment": 1.0,
+          "Refund": 1.0,
+          "Transaction": 1.0
+        }
+      },
+      "amount_exact_match": {
+        "correct": 35,
+        "total": 35
+      },
+      "date_exact_match": {
+        "correct": 8,
+        "total": 8
+      },
+      "relevance_correct": 50,
+      "review_rate": 0.12,
+      "provider_attempts": 0,
+      "provider_errors": 0,
+      "provider_usage_complete": true,
+      "tokens": {},
+      "estimated_cost_usd": 0.0,
+      "estimated_cost_per_1000_messages_usd": 0.0,
+      "latency_ms": {
+        "mean": 0.5108466395176947,
+        "p95": 1.1344170197844505
+      },
+      "cases": [
+        {
+          "id": "bank-debit-notice-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                129950,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 12.59108301019296
+        },
+        {
+          "id": "bank-debit-notice-1",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                8500,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.36987499333918095
+        },
+        {
+          "id": "bank-debit-notice-2",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                129950,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.47554203774780035
+        },
+        {
+          "id": "bank-debit-notice-3",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                8500,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.31708303140476346
+        },
+        {
+          "id": "bank-debit-notice-4",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                129950,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 2.1285839611664414
+        },
+        {
+          "id": "bank-debit-notice-5",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                8500,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.2882500411942601
+        },
+        {
+          "id": "bank-debit-notice-6",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                129950,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.2734159934334457
+        },
+        {
+          "id": "bank-debit-notice-7",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                8500,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.20179199054837227
+        },
+        {
+          "id": "heldout-35-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Payment",
+            "amounts": [
+              [
+                "payment",
+                820000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-18",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.5047090235166252
+        },
+        {
+          "id": "heldout-36-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Credit Card Bill",
+            "amounts": [
+              [
+                "total due",
+                990000,
+                "INR"
+              ],
+              [
+                "minimum due",
+                49500,
+                "INR"
+              ]
+            ],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.33779197838157415
+        },
+        {
+          "id": "heldout-37-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Refund",
+            "amounts": [
+              [
+                "refund",
+                20000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.46741601545363665
+        },
+        {
+          "id": "heldout-38-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Refund",
+            "amounts": [
+              [
+                "refund",
+                27500,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-21",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.13687496539205313
+        },
+        {
+          "id": "heldout-39-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Cashback/Reward",
+            "amounts": [],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.3565000370144844
+        },
+        {
+          "id": "heldout-40-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Cashback/Reward",
+            "amounts": [
+              [
+                "reward",
+                7000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.1420829794369638
+        },
+        {
+          "id": "heldout-41-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "EMI",
+            "amounts": [
+              [
+                "emi",
+                410000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-30",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.21891703363507986
+        },
+        {
+          "id": "heldout-42-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Failed Transaction",
+            "amounts": [
+              [
+                "unknown",
+                70000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-21",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.17279101302847266
+        },
+        {
+          "id": "heldout-43-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Offer/Promotion",
+            "amounts": [
+              [
+                "threshold",
+                150000,
+                "INR"
+              ],
+              [
+                "discount",
+                10000,
+                "INR"
+              ]
+            ],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.16058300388976932
+        },
+        {
+          "id": "heldout-44-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Other",
+            "amounts": [
+              [
+                "balance",
+                505000,
+                "INR"
+              ]
+            ],
+            "event_date": null,
+            "review": true
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.16037496970966458
+        },
+        {
+          "id": "heldout-45-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                12345678,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 1.1344170197844505
+        },
+        {
+          "id": "heldout-46-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                2900,
+                "USD"
+              ]
+            ],
+            "event_date": "2026-09-21",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.2245419891551137
+        },
+        {
+          "id": "heldout-47-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                2900,
+                null
+              ]
+            ],
+            "event_date": "2026-09-21",
+            "review": true
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.1673340448178351
+        },
+        {
+          "id": "heldout-48-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                72000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-21",
+            "review": true
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.18758297665044665
+        },
+        {
+          "id": "heldout-49-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [],
+            "event_date": null,
+            "review": true
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.09254104224964976
+        },
+        {
+          "id": "heldout-50-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                40000,
+                "INR"
+              ]
+            ],
+            "event_date": null,
+            "review": true
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.3791249473579228
+        },
+        {
+          "id": "heldout-51-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                50000,
+                "INR"
+              ]
+            ],
+            "event_date": null,
+            "review": true
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.12337497901171446
+        },
+        {
+          "id": "heldout-52-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Payment",
+            "amounts": [
+              [
+                "payment",
+                90000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-21",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.3295839997008443
+        },
+        {
+          "id": "heldout-53-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Refund",
+            "amounts": [
+              [
+                "refund",
+                10000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-21",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.4268329939804971
+        },
+        {
+          "id": "otp-heldout-0",
+          "prediction": {
+            "relevant": false,
+            "message_type": "OTP",
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.004750036168843508
+        },
+        {
+          "id": "otp-heldout-1",
+          "prediction": {
+            "relevant": false,
+            "message_type": "OTP",
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.00566698145121336
+        },
+        {
+          "id": "otp-heldout-2",
+          "prediction": {
+            "relevant": false,
+            "message_type": "OTP",
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.0037500285543501377
+        },
+        {
+          "id": "hard-negative-test-0",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.41504198452457786
+        },
+        {
+          "id": "hard-negative-test-1",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.04191696643829346
+        },
+        {
+          "id": "hard-negative-test-2",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.1949999714270234
+        },
+        {
+          "id": "hard-negative-test-3",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.0362499849870801
+        },
+        {
+          "id": "hard-negative-test-4",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.03045797348022461
+        },
+        {
+          "id": "hard-negative-test-5",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.03487500362098217
+        },
+        {
+          "id": "hard-negative-test-6",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.08845899719744921
+        },
+        {
+          "id": "hard-negative-test-7",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.035999983083456755
+        },
+        {
+          "id": "hard-negative-test-8",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.024833017960190773
+        },
+        {
+          "id": "hard-negative-test-9",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.02154102548956871
+        },
+        {
+          "id": "hard-negative-test-10",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.021499989088624716
+        },
+        {
+          "id": "hard-negative-test-11",
+          "prediction": {
+            "relevant": false,
+            "message_type": null,
+            "amounts": [],
+            "event_date": null,
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.028124952223151922
+        },
+        {
+          "id": "adversarial-heldout-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                4000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.6068330258131027
+        },
+        {
+          "id": "multi-heldout-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                1000,
+                "INR"
+              ],
+              [
+                "purchase",
+                2000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-20",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.36341603845357895
+        },
+        {
+          "id": "linked-golden-heldout-0",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                149900,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-01",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.21370803005993366
+        },
+        {
+          "id": "linked-golden-heldout-1",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                149900,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-01",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.20779197802767158
+        },
+        {
+          "id": "linked-golden-heldout-2",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Refund",
+            "amounts": [
+              [
+                "refund",
+                49900,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-02",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.17779198242351413
+        },
+        {
+          "id": "linked-golden-heldout-3",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Refund",
+            "amounts": [
+              [
+                "refund",
+                49900,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-03",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.15970796812325716
+        },
+        {
+          "id": "linked-golden-heldout-4",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Transaction",
+            "amounts": [
+              [
+                "purchase",
+                149900,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-01",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.14995801029726863
+        },
+        {
+          "id": "linked-golden-heldout-5",
+          "prediction": {
+            "relevant": true,
+            "message_type": "Refund",
+            "amounts": [
+              [
+                "refund",
+                10000,
+                "INR"
+              ]
+            ],
+            "event_date": "2026-09-04",
+            "review": false
+          },
+          "provider_attempted": false,
+          "error": null,
+          "latency_ms": 0.3059579757973552
+        }
+      ]
+    },
+    {
+      "status": "not_run",
+      "reason": "Live provider configuration and --allow-live-synthetic are required",
+      "mode": "llm"
+    },
+    {
+      "status": "not_run",
+      "reason": "Live provider configuration and --allow-live-synthetic are required",
+      "mode": "hybrid"
+    }
+  ]
+}

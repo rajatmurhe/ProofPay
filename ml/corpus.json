@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "Transaction:0:0",
+    "family": "Transaction:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Spent INR 125 at Aster Books using your card.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:0:1",
+    "family": "Transaction:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Spent INR 499 at Maple Market using your card.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:0:2",
+    "family": "Transaction:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Spent INR 1499 at Nimbus Store using your card.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:0:3",
+    "family": "Transaction:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Spent INR 8200 at Cedar Services using your card.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:1:0",
+    "family": "Transaction:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your account was debited INR 125 for a purchase at Aster Books.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:1:1",
+    "family": "Transaction:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your account was debited INR 499 for a purchase at Maple Market.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:1:2",
+    "family": "Transaction:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your account was debited INR 1499 for a purchase at Nimbus Store.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:1:3",
+    "family": "Transaction:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your account was debited INR 8200 for a purchase at Cedar Services.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:2:0",
+    "family": "Transaction:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Paid INR 125 to Aster Books. Transaction successful.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:2:1",
+    "family": "Transaction:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Paid INR 499 to Maple Market. Transaction successful.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:2:2",
+    "family": "Transaction:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Paid INR 1499 to Nimbus Store. Transaction successful.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:2:3",
+    "family": "Transaction:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Paid INR 8200 to Cedar Services. Transaction successful.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:3:0",
+    "family": "Transaction:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Purchase confirmed at Aster Books: INR 125 charged to card.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:3:1",
+    "family": "Transaction:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Purchase confirmed at Maple Market: INR 499 charged to card.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:3:2",
+    "family": "Transaction:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Purchase confirmed at Nimbus Store: INR 1499 charged to card.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:3:3",
+    "family": "Transaction:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Purchase confirmed at Cedar Services: INR 8200 charged to card.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:4:0",
+    "family": "Transaction:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "A debit of INR 125 towards shopping at Aster Books is complete.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:4:1",
+    "family": "Transaction:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "A debit of INR 499 towards shopping at Maple Market is complete.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:4:2",
+    "family": "Transaction:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "A debit of INR 1499 towards shopping at Nimbus Store is complete.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Transaction:4:3",
+    "family": "Transaction:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "A debit of INR 8200 towards shopping at Cedar Services is complete.",
+    "label": "Transaction"
+  },
+  {
+    "id": "Payment:0:0",
+    "family": "Payment:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card payment INR 125 received. Thank you.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:0:1",
+    "family": "Payment:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card payment INR 499 received. Thank you.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:0:2",
+    "family": "Payment:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card payment INR 1499 received. Thank you.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:0:3",
+    "family": "Payment:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card payment INR 8200 received. Thank you.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:1:0",
+    "family": "Payment:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Transferred INR 125 from your account to Aster Books.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:1:1",
+    "family": "Payment:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Transferred INR 499 from your account to Maple Market.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:1:2",
+    "family": "Payment:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Transferred INR 1499 from your account to Nimbus Store.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:1:3",
+    "family": "Payment:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Transferred INR 8200 from your account to Cedar Services.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:2:0",
+    "family": "Payment:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card bill payment of INR 125 was successful.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:2:1",
+    "family": "Payment:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card bill payment of INR 499 was successful.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:2:2",
+    "family": "Payment:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card bill payment of INR 1499 was successful.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:2:3",
+    "family": "Payment:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card bill payment of INR 8200 was successful.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:3:0",
+    "family": "Payment:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "We received INR 125 towards your credit card balance.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:3:1",
+    "family": "Payment:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "We received INR 499 towards your credit card balance.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:3:2",
+    "family": "Payment:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "We received INR 1499 towards your credit card balance.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:3:3",
+    "family": "Payment:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "We received INR 8200 towards your credit card balance.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:4:0",
+    "family": "Payment:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "INR 125 has been applied to settle your card dues.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:4:1",
+    "family": "Payment:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "INR 499 has been applied to settle your card dues.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:4:2",
+    "family": "Payment:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "INR 1499 has been applied to settle your card dues.",
+    "label": "Payment"
+  },
+  {
+    "id": "Payment:4:3",
+    "family": "Payment:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "INR 8200 has been applied to settle your card dues.",
+    "label": "Payment"
+  },
+  {
+    "id": "Refund:0:0",
+    "family": "Refund:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Refund INR 125 credited for your order at Aster Books.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:0:1",
+    "family": "Refund:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Refund INR 499 credited for your order at Maple Market.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:0:2",
+    "family": "Refund:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Refund INR 1499 credited for your order at Nimbus Store.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:0:3",
+    "family": "Refund:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Refund INR 8200 credited for your order at Cedar Services.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:1:0",
+    "family": "Refund:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your refund of INR 125 from Aster Books is pending.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:1:1",
+    "family": "Refund:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your refund of INR 499 from Maple Market is pending.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:1:2",
+    "family": "Refund:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your refund of INR 1499 from Nimbus Store is pending.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:1:3",
+    "family": "Refund:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your refund of INR 8200 from Cedar Services is pending.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:2:0",
+    "family": "Refund:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Aster Books initiated a refund of INR 125 to your account.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:2:1",
+    "family": "Refund:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Maple Market initiated a refund of INR 499 to your account.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:2:2",
+    "family": "Refund:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Nimbus Store initiated a refund of INR 1499 to your account.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:2:3",
+    "family": "Refund:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Cedar Services initiated a refund of INR 8200 to your account.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:3:0",
+    "family": "Refund:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Your return at Aster Books was processed. Refund amount: INR 125.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:3:1",
+    "family": "Refund:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Your return at Maple Market was processed. Refund amount: INR 499.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:3:2",
+    "family": "Refund:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Your return at Nimbus Store was processed. Refund amount: INR 1499.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:3:3",
+    "family": "Refund:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Your return at Cedar Services was processed. Refund amount: INR 8200.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:4:0",
+    "family": "Refund:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Money back for the returned item: INR 125 from Aster Books.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:4:1",
+    "family": "Refund:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Money back for the returned item: INR 499 from Maple Market.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:4:2",
+    "family": "Refund:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Money back for the returned item: INR 1499 from Nimbus Store.",
+    "label": "Refund"
+  },
+  {
+    "id": "Refund:4:3",
+    "family": "Refund:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Money back for the returned item: INR 8200 from Cedar Services.",
+    "label": "Refund"
+  },
+  {
+    "id": "Credit Card Bill:0:0",
+    "family": "Credit Card Bill:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card statement total due INR 125, minimum due INR 100.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:0:1",
+    "family": "Credit Card Bill:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card statement total due INR 499, minimum due INR 100.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:0:2",
+    "family": "Credit Card Bill:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card statement total due INR 1499, minimum due INR 100.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:0:3",
+    "family": "Credit Card Bill:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card statement total due INR 8200, minimum due INR 100.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:1:0",
+    "family": "Credit Card Bill:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card bill is ready. Please pay INR 125 by 2026-11-05.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:1:1",
+    "family": "Credit Card Bill:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card bill is ready. Please pay INR 499 by 2026-11-05.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:1:2",
+    "family": "Credit Card Bill:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card bill is ready. Please pay INR 1499 by 2026-11-05.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:1:3",
+    "family": "Credit Card Bill:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card bill is ready. Please pay INR 8200 by 2026-11-05.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:2:0",
+    "family": "Credit Card Bill:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card outstanding bill INR 125. Minimum payment INR 100.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:2:1",
+    "family": "Credit Card Bill:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card outstanding bill INR 499. Minimum payment INR 100.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:2:2",
+    "family": "Credit Card Bill:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card outstanding bill INR 1499. Minimum payment INR 100.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:2:3",
+    "family": "Credit Card Bill:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Credit card outstanding bill INR 8200. Minimum payment INR 100.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:3:0",
+    "family": "Credit Card Bill:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Monthly card statement generated. Amount payable INR 125.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:3:1",
+    "family": "Credit Card Bill:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Monthly card statement generated. Amount payable INR 499.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:3:2",
+    "family": "Credit Card Bill:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Monthly card statement generated. Amount payable INR 1499.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:3:3",
+    "family": "Credit Card Bill:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Monthly card statement generated. Amount payable INR 8200.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:4:0",
+    "family": "Credit Card Bill:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Billing cycle closed. Your credit card dues total INR 125.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:4:1",
+    "family": "Credit Card Bill:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Billing cycle closed. Your credit card dues total INR 499.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:4:2",
+    "family": "Credit Card Bill:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Billing cycle closed. Your credit card dues total INR 1499.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Credit Card Bill:4:3",
+    "family": "Credit Card Bill:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Billing cycle closed. Your credit card dues total INR 8200.",
+    "label": "Credit Card Bill"
+  },
+  {
+    "id": "Cashback/Reward:0:0",
+    "family": "Cashback/Reward:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Cashback INR 125 credited to your wallet.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:0:1",
+    "family": "Cashback/Reward:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Cashback INR 499 credited to your wallet.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:0:2",
+    "family": "Cashback/Reward:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Cashback INR 1499 credited to your wallet.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:0:3",
+    "family": "Cashback/Reward:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Cashback INR 8200 credited to your wallet.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:1:0",
+    "family": "Cashback/Reward:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "You earned reward points for shopping at Aster Books.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:1:1",
+    "family": "Cashback/Reward:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "You earned reward points for shopping at Maple Market.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:1:2",
+    "family": "Cashback/Reward:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "You earned reward points for shopping at Nimbus Store.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:1:3",
+    "family": "Cashback/Reward:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "You earned reward points for shopping at Cedar Services.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:2:0",
+    "family": "Cashback/Reward:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your cashback of INR 125 is pending.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:2:1",
+    "family": "Cashback/Reward:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your cashback of INR 499 is pending.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:2:2",
+    "family": "Cashback/Reward:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your cashback of INR 1499 is pending.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:2:3",
+    "family": "Cashback/Reward:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your cashback of INR 8200 is pending.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:3:0",
+    "family": "Cashback/Reward:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Loyalty reward INR 125 added after your purchase.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:3:1",
+    "family": "Cashback/Reward:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Loyalty reward INR 499 added after your purchase.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:3:2",
+    "family": "Cashback/Reward:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Loyalty reward INR 1499 added after your purchase.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:3:3",
+    "family": "Cashback/Reward:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Loyalty reward INR 8200 added after your purchase.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:4:0",
+    "family": "Cashback/Reward:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Enjoy INR 125 back as a shopping reward from Aster Books.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:4:1",
+    "family": "Cashback/Reward:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Enjoy INR 499 back as a shopping reward from Maple Market.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:4:2",
+    "family": "Cashback/Reward:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Enjoy INR 1499 back as a shopping reward from Nimbus Store.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "Cashback/Reward:4:3",
+    "family": "Cashback/Reward:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Enjoy INR 8200 back as a shopping reward from Cedar Services.",
+    "label": "Cashback/Reward"
+  },
+  {
+    "id": "EMI:0:0",
+    "family": "EMI:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "EMI INR 125 debited for your loan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:0:1",
+    "family": "EMI:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "EMI INR 499 debited for your loan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:0:2",
+    "family": "EMI:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "EMI INR 1499 debited for your loan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:0:3",
+    "family": "EMI:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "EMI INR 8200 debited for your loan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:1:0",
+    "family": "EMI:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your monthly loan installment of INR 125 is due.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:1:1",
+    "family": "EMI:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your monthly loan installment of INR 499 is due.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:1:2",
+    "family": "EMI:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your monthly loan installment of INR 1499 is due.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:1:3",
+    "family": "EMI:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your monthly loan installment of INR 8200 is due.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:2:0",
+    "family": "EMI:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "EMI payment INR 125 received for the current month.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:2:1",
+    "family": "EMI:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "EMI payment INR 499 received for the current month.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:2:2",
+    "family": "EMI:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "EMI payment INR 1499 received for the current month.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:2:3",
+    "family": "EMI:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "EMI payment INR 8200 received for the current month.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:3:0",
+    "family": "EMI:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Scheduled installment INR 125 will be collected for your loan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:3:1",
+    "family": "EMI:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Scheduled installment INR 499 will be collected for your loan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:3:2",
+    "family": "EMI:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Scheduled installment INR 1499 will be collected for your loan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:3:3",
+    "family": "EMI:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Scheduled installment INR 8200 will be collected for your loan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:4:0",
+    "family": "EMI:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "This month loan repayment: INR 125 under your EMI plan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:4:1",
+    "family": "EMI:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "This month loan repayment: INR 499 under your EMI plan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:4:2",
+    "family": "EMI:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "This month loan repayment: INR 1499 under your EMI plan.",
+    "label": "EMI"
+  },
+  {
+    "id": "EMI:4:3",
+    "family": "EMI:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "This month loan repayment: INR 8200 under your EMI plan.",
+    "label": "EMI"
+  },
+  {
+    "id": "Failed Transaction:0:0",
+    "family": "Failed Transaction:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Payment INR 125 failed at Aster Books.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:0:1",
+    "family": "Failed Transaction:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Payment INR 499 failed at Maple Market.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:0:2",
+    "family": "Failed Transaction:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Payment INR 1499 failed at Nimbus Store.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:0:3",
+    "family": "Failed Transaction:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Payment INR 8200 failed at Cedar Services.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:1:0",
+    "family": "Failed Transaction:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card transaction for INR 125 was declined.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:1:1",
+    "family": "Failed Transaction:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card transaction for INR 499 was declined.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:1:2",
+    "family": "Failed Transaction:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card transaction for INR 1499 was declined.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:1:3",
+    "family": "Failed Transaction:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your card transaction for INR 8200 was declined.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:2:0",
+    "family": "Failed Transaction:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "UPI transfer INR 125 unsuccessful. Please retry.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:2:1",
+    "family": "Failed Transaction:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "UPI transfer INR 499 unsuccessful. Please retry.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:2:2",
+    "family": "Failed Transaction:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "UPI transfer INR 1499 unsuccessful. Please retry.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:2:3",
+    "family": "Failed Transaction:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "UPI transfer INR 8200 unsuccessful. Please retry.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:3:0",
+    "family": "Failed Transaction:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Unable to process your purchase of INR 125 at Aster Books.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:3:1",
+    "family": "Failed Transaction:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Unable to process your purchase of INR 499 at Maple Market.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:3:2",
+    "family": "Failed Transaction:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Unable to process your purchase of INR 1499 at Nimbus Store.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:3:3",
+    "family": "Failed Transaction:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Unable to process your purchase of INR 8200 at Cedar Services.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:4:0",
+    "family": "Failed Transaction:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Transaction rejected for insufficient funds. Amount INR 125.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:4:1",
+    "family": "Failed Transaction:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Transaction rejected for insufficient funds. Amount INR 499.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:4:2",
+    "family": "Failed Transaction:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Transaction rejected for insufficient funds. Amount INR 1499.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Failed Transaction:4:3",
+    "family": "Failed Transaction:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Transaction rejected for insufficient funds. Amount INR 8200.",
+    "label": "Failed Transaction"
+  },
+  {
+    "id": "Offer/Promotion:0:0",
+    "family": "Offer/Promotion:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Offer: save INR 125 on your next purchase at Aster Books.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:0:1",
+    "family": "Offer/Promotion:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Offer: save INR 499 on your next purchase at Maple Market.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:0:2",
+    "family": "Offer/Promotion:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Offer: save INR 1499 on your next purchase at Nimbus Store.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:0:3",
+    "family": "Offer/Promotion:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Offer: save INR 8200 on your next purchase at Cedar Services.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:1:0",
+    "family": "Offer/Promotion:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Get discount INR 125 when you shop with your card.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:1:1",
+    "family": "Offer/Promotion:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Get discount INR 499 when you shop with your card.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:1:2",
+    "family": "Offer/Promotion:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Get discount INR 1499 when you shop with your card.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:1:3",
+    "family": "Offer/Promotion:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Get discount INR 8200 when you shop with your card.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:2:0",
+    "family": "Offer/Promotion:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Limited promotion from Aster Books: coupon worth INR 125.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:2:1",
+    "family": "Offer/Promotion:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Limited promotion from Maple Market: coupon worth INR 499.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:2:2",
+    "family": "Offer/Promotion:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Limited promotion from Nimbus Store: coupon worth INR 1499.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:2:3",
+    "family": "Offer/Promotion:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Limited promotion from Cedar Services: coupon worth INR 8200.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:3:0",
+    "family": "Offer/Promotion:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Shop today at Aster Books and unlock a discount of INR 125.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:3:1",
+    "family": "Offer/Promotion:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Shop today at Maple Market and unlock a discount of INR 499.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:3:2",
+    "family": "Offer/Promotion:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Shop today at Nimbus Store and unlock a discount of INR 1499.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:3:3",
+    "family": "Offer/Promotion:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Shop today at Cedar Services and unlock a discount of INR 8200.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:4:0",
+    "family": "Offer/Promotion:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Sale announcement: use coupon SAVE for INR 125 off your order.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:4:1",
+    "family": "Offer/Promotion:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Sale announcement: use coupon SAVE for INR 499 off your order.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:4:2",
+    "family": "Offer/Promotion:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Sale announcement: use coupon SAVE for INR 1499 off your order.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "Offer/Promotion:4:3",
+    "family": "Offer/Promotion:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Sale announcement: use coupon SAVE for INR 8200 off your order.",
+    "label": "Offer/Promotion"
+  },
+  {
+    "id": "OTP:0:0",
+    "family": "OTP:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "OTP 730100 to approve card payment INR 125. Do not share.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:0:1",
+    "family": "OTP:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "OTP 730101 to approve card payment INR 499. Do not share.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:0:2",
+    "family": "OTP:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "OTP 730102 to approve card payment INR 1499. Do not share.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:0:3",
+    "family": "OTP:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "OTP 730103 to approve card payment INR 8200. Do not share.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:1:0",
+    "family": "OTP:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your one time password is 730100.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:1:1",
+    "family": "OTP:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your one time password is 730101.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:1:2",
+    "family": "OTP:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your one time password is 730102.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:1:3",
+    "family": "OTP:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Your one time password is 730103.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:2:0",
+    "family": "OTP:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Verification code 730100 for your account sign in.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:2:1",
+    "family": "OTP:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Verification code 730101 for your account sign in.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:2:2",
+    "family": "OTP:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Verification code 730102 for your account sign in.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:2:3",
+    "family": "OTP:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Verification code 730103 for your account sign in.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:3:0",
+    "family": "OTP:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Use authentication code 730100 to confirm INR 125.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:3:1",
+    "family": "OTP:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Use authentication code 730101 to confirm INR 499.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:3:2",
+    "family": "OTP:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Use authentication code 730102 to confirm INR 1499.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:3:3",
+    "family": "OTP:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Use authentication code 730103 to confirm INR 8200.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:4:0",
+    "family": "OTP:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Security code 730100 expires in five minutes. Never disclose it.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:4:1",
+    "family": "OTP:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Security code 730101 expires in five minutes. Never disclose it.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:4:2",
+    "family": "OTP:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Security code 730102 expires in five minutes. Never disclose it.",
+    "label": "OTP"
+  },
+  {
+    "id": "OTP:4:3",
+    "family": "OTP:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "Security code 730103 expires in five minutes. Never disclose it.",
+    "label": "OTP"
+  },
+  {
+    "id": "Other:0:0",
+    "family": "Other:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Meet me at Aster Books after lunch.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:0:1",
+    "family": "Other:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Meet me at Maple Market after lunch.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:0:2",
+    "family": "Other:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Meet me at Nimbus Store after lunch.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:0:3",
+    "family": "Other:0",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Meet me at Cedar Services after lunch.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:1:0",
+    "family": "Other:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Our class will discuss bank loans and payment systems today.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:1:1",
+    "family": "Other:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Our class will discuss bank loans and payment systems today.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:1:2",
+    "family": "Other:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Our class will discuss bank loans and payment systems today.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:1:3",
+    "family": "Other:1",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "Our class will discuss bank loans and payment systems today.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:2:0",
+    "family": "Other:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "The invoice design workshop starts tomorrow.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:2:1",
+    "family": "Other:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "The invoice design workshop starts tomorrow.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:2:2",
+    "family": "Other:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "The invoice design workshop starts tomorrow.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:2:3",
+    "family": "Other:2",
+    "split": "train",
+    "provenance": "synthetic",
+    "body": "The invoice design workshop starts tomorrow.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:3:0",
+    "family": "Other:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Can you review the refund policy draft for our project?",
+    "label": "Other"
+  },
+  {
+    "id": "Other:3:1",
+    "family": "Other:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Can you review the refund policy draft for our project?",
+    "label": "Other"
+  },
+  {
+    "id": "Other:3:2",
+    "family": "Other:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Can you review the refund policy draft for our project?",
+    "label": "Other"
+  },
+  {
+    "id": "Other:3:3",
+    "family": "Other:3",
+    "split": "validation",
+    "provenance": "synthetic",
+    "body": "Can you review the refund policy draft for our project?",
+    "label": "Other"
+  },
+  {
+    "id": "Other:4:0",
+    "family": "Other:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "The bank branch is closed on Sunday. Visit on Monday.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:4:1",
+    "family": "Other:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "The bank branch is closed on Sunday. Visit on Monday.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:4:2",
+    "family": "Other:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "The bank branch is closed on Sunday. Visit on Monday.",
+    "label": "Other"
+  },
+  {
+    "id": "Other:4:3",
+    "family": "Other:4",
+    "split": "test",
+    "provenance": "synthetic",
+    "body": "The bank branch is closed on Sunday. Visit on Monday.",
+    "label": "Other"
+  }
+]
